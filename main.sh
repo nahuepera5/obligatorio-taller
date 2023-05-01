@@ -12,8 +12,9 @@ request_letter () {
 }
 
 search_words () {
-	regular_expresion_letter="\b$1\w*\b"
-	grep -io $regular_expresion_letter diccionario.txt > .words
+	#regular_expresion_letter="\b$1\w*\b\s"
+	#grep -io $regular_expresion_letter diccionario.txt > .words
+	grep -Eo '^[^[:space:]]+' diccionario.txt | grep '^a' > .words
 }
 
 show_words () {
